@@ -610,7 +610,92 @@ body {
   cursor: pointer;
 }
 
-/*sing product end*/
+/* product end*/
+/*blog page start*/
+/*The background image for the blog page isn't changing due to an incorrect CSS selector. Here's how to fix it:
+
+In your CSS file, change this:
+
+css
+Copy
+#page-header .blog-header {
+  background-image: url("img/banner/b19.jpg") ;
+}
+To this:
+
+css
+Copy
+#page-header.blog-header {
+  background-image: url("img/banner/b19.jpg");
+}
+Key difference:
+The space in the original selector made it look for a child element with class .blog-header inside #page-header, but you actually want to target the element that has both the ID and class.*/
+#page-header.blog-header {
+  background-image: url("img/banner/b19.jpg");
+}
+
+#blog {
+  padding: 50px 15px 0 150px;
+}
+
+#blog .blog-box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding-bottom: 90px;
+}
+#blog .blog-img {
+  width: 20%;
+  margin-right: 40px;
+}
+
+#blog img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+#blog .blog-details {
+  width: 50%;
+}
+#blog .blog-details a {
+  text-decoration: none;
+  font-size: 11px;
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  transition: 0.3;
+}
+
+#blog .blog-details a::after {
+  content: "";
+  width: 50px;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  top: 4px;
+  right: -60px;
+}
+#blog .blog-details a:hover {
+  color: #000099;
+}
+
+#blog .blog-details a:hover:after {
+  color: #000099;
+}
+
+#blog .blog-box h1 {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  font-size: 70px;
+  font-weight: 700;
+  color: #c9cbce;
+  z-index: -9;
+}
+
+/*blog page end*/
+
 #newsletter {
   display: flex;
   justify-content: space-between;
@@ -891,6 +976,23 @@ footer .copyright {
     margin-right: 0px;
   }
   #prodetails .single-pro-details {
+    width: 100%;
+  }
+  /*blog page*/
+  #blog {
+    padding: 100px 20px 0 20px;
+  }
+  #blog .blog-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #blog .blog-img {
+    width: 100%;
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+  #blog .blog-details {
     width: 100%;
   }
 }
