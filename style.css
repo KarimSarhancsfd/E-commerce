@@ -131,6 +131,15 @@ body {
 #close {
   display: none;
 }
+#contact-details .map {
+  width: 55%;
+  height: 400px;
+}
+
+#contact-details .map iframe {
+  width: 100%;
+  height: 100%;
+}
 
 /* Home page*/
 
@@ -729,6 +738,96 @@ The space in the original selector made it look for a child element with class .
 
 /*about page end*/
 
+/*contact page start*/
+#contact-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#contact-details .details {
+  width: 40%;
+}
+#contact-details .details span,
+#form-details form {
+  font-size: 12px;
+}
+#contact-details .details h2,
+#form-details form h2 {
+  font-size: 26px;
+  line-height: 35px;
+  padding: 20px 0;
+}
+#contact-details .details h3 {
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+#contact-details .details li {
+  text-decoration: none;
+  display: flex;
+  padding: 10px 0;
+}
+#contact-details .details li i {
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#contact-details .details li p {
+  margin: 0;
+  font-size: 14px;
+}
+#form-details {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px;
+  padding: 80px;
+  border: 1px solid #e1e1e1;
+}
+
+#form-details form {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  outline: none;
+  margin-bottom: 20px;
+  border: 1px solid #e1e1e1;
+}
+#form-details form button {
+  background-color: #6600cd;
+  color: #fff;
+}
+#form-details .people div {
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+}
+#for-details .people div img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+#for-details .people div p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 25px;
+}
+
+#form-details .people div p span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+/*contact page end*/
+
 #newsletter {
   display: flex;
   justify-content: space-between;
@@ -890,7 +989,7 @@ footer .copyright {
 
 /* start Media query*/
 
-@media (max-width: 855px) {
+@media (max-width: 799px) {
   .section-p1 {
     padding: 2.5rem 2.5rem;
   }
@@ -963,6 +1062,14 @@ footer .copyright {
   #sm-banner .banner-box {
     min-width: 100%;
     height: 30vh;
+  }
+  /*contact page*/
+
+  #form-details {
+    padding: 40px;
+  }
+  #form-details form {
+    width: 50%;
   }
 }
 
@@ -1045,5 +1152,26 @@ footer .copyright {
     width: 100%;
     height: 100%;
     margin: 30px auto 0 auto;
+  }
+  /*contact page*/
+  #contact-details {
+    flex-direction: column;
+  }
+
+  #contact-details .details {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  #contact-details .map {
+    width: 100%;
+  }
+  #form-details {
+    margin: 10px;
+    padding: 30px 10px;
+    flex-wrap: wrap;
+  }
+  #form-details form {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
