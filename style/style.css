@@ -968,9 +968,6 @@ body #user-registration-login-body {
   background-color: var(--color-tertiary);
 }
 
-a {
-  color: var(--color-primary);
-}
 a:focus {
   color: var(--color-secondary);
 }
