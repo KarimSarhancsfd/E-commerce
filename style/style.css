@@ -1209,8 +1209,8 @@ input:focus {
 
 .login-box a {
   display: block;
-  margin-top: 10px;
-  color: #8b4513; /* Saddle brown */
+  margin-top: 5px;
+  color: #ccccff;
   text-decoration: none;
   animation: fadeIn 1s ease-in-out;
 }
@@ -1220,21 +1220,22 @@ input:focus {
 }
 
 .google-signin {
-  margin-top: 20px;
+  margin-top: 5px;
+
   display: flex;
   justify-content: center;
   animation: fadeIn 1s ease-in-out;
 }
 
 .g-signin2 {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 32.5px;
+  height: 32.5px;
+  border-radius: 100px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: #ccccff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -1331,6 +1332,7 @@ input:focus {
 #newsletter .form {
   display: flex;
   width: 100%;
+  /* max-width: 220px; */
   max-width: 600px;
 }
 
@@ -1537,6 +1539,17 @@ footer .copyright {
   }
   #form-details form {
     width: 50%;
+  }
+
+  #newsletter .form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    max-width: 100%;
+  }
+  #newsletter input {
+    width: 100%;
+    height: 50%px;
   }
 }
 /* mobile screen */

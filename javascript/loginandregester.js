@@ -1,5 +1,5 @@
 function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
+  let profile = googleUser.getBasicProfile();
   console.log("ID: " + profile.getId());
   console.log("Name: " + profile.getName());
   console.log("Given Name: " + profile.getGivenName());
