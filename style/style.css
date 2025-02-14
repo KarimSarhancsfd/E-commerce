@@ -1185,8 +1185,8 @@ input:focus {
 }
 
 .company-logo {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   margin-bottom: 20px;
   animation: fadeIn 1s ease-in-out;
@@ -1250,6 +1250,27 @@ input:focus {
 }
 .btn-Forgot_password:hover {
   text-decoration: none;
+}
+
+.form-inner {
+  align-items: center;
+  margin-bottom: 10px;
+  /* padding-bottom: 10px; */
+}
+
+.input-wrapper .input-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 20px 0;
+}
+
+.input-wrapper i {
+  margin: 0px 10px 0px;
+  background-color: #ccccff;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 @keyframes fadeIn {
