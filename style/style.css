@@ -1827,14 +1827,21 @@ input:focus {
 }
 
 .login-box input[type="text"],
-.login-box input[type="password"] {
+.login-box input[type="password"],
+.login-box input[type="email"] {
   width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 5px;
+  margin: -10px 0;
   border: 1px solid #ddd;
   border-radius: 5px;
   animation: fadeIn 1s ease-in-out;
 }
+.login-box #submit {
+  border-radius: 10px;
+}
+/* glitch button submit login start */
+
+/*glitch button submit login end*/
 
 .company-logo {
   width: 50px;
@@ -1856,7 +1863,7 @@ input:focus {
 }
 
 .login-box button:hover {
-  background: #6b8e23; /* Olive green */
+  background: #b5c7eb; /* Olive green */
 }
 
 .login-box a {
