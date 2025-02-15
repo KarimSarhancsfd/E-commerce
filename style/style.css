@@ -173,7 +173,7 @@ body {
   align-items: center;
 }
 
-.glitch,
+.glitch-text,
 .glow {
   /* color: #dfbfbf; */
   color: #efbf04;
@@ -182,7 +182,7 @@ body {
   animation: glitch 5s 5s infinite;
 }
 
-.glitch::before,
+.glitch-text::before,
 .glow::before {
   content: attr(data-text);
   position: absolute;
@@ -195,7 +195,7 @@ body {
     glitch 5s 5.05s infinite;
 }
 
-.glitch::after,
+.glitch-text::after,
 .glow::after {
   content: attr(data-text);
   position: absolute;
@@ -736,8 +736,6 @@ body {
     clip-path: polygon(0 0, 0 0, 0 0, 0 0);
   }
 }
-
-/* Add your existing CSS here */
 
 .glitch {
   position: relative;
