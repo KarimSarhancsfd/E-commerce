@@ -8,6 +8,8 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+//
 // we will need this dynamic links to forward
 // https://example.com/link-suffix
 // https://example.com/links/promos/link-suffix
@@ -42,7 +44,7 @@ CreateAccount.addEventListener("click", function (event) {
     .then((userCredential) => {
       // Signed up
       alert(`Creating New User...`);
-      window.location.href = "index.html";
+      window.location.href = "../login.html";
       // ...
     })
     .catch((error) => {
