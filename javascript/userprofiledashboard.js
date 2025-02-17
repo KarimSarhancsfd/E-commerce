@@ -1,5 +1,3 @@
-"use strict";
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
 import {
   getAuth,
@@ -20,45 +18,35 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const user = auth.currentUser;
+let user = auth.currentUser;
 
-// Listen for changes in authentication state
 onAuthStateChanged(auth, (user) => {
   console.log(user);
   if (user) {
-    // User is signed in; update the UI with user info.
-    updateUserProfile(user);
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
     const uid = user.uid;
+    console.log(uid);
+    updateUserProfile(user);
     return uid;
+
+    // ...
   } else {
-    // User is signed out; redirect to registration/login page.
-    alert("Please create an account and log in.");
+    // User is signed out
+    alert("Creat Account & login");
     window.location.href = "../regestration.html";
+    // ...
   }
 });
 
-// Function to update user profile elements with data from Firebase
+// Function  update user profile
+
 function updateUserProfile(user) {
-  // Extract user properties (ensure these properties are set in your Firebase Auth user record)
-  const userName = user.displayName || "Anonymous User";
+  const userName = user.displayName;
   const userEmail = user.email;
-  // Use a fallback URL string if photoURL is not available
-  //   const userProfilePicture =
-  //     user.photoURL ||
-  //     "https://raw.githubusercontent.com/MoosaSaadat/user-profile/master/ProfilePicture11.jpg";
+  const userProfilePicture = user.photoURL;
 
-  // Update the corresponding HTML elements if they exist
-  const usernameElem = document.getElementById("profile-username-first");
-  const emailElem = document.getElementById("userEmail");
-  const profilePictureElem = document.getElementById("userProfilePicture");
+  //update the profile section with user data
 
-  if (usernameElem) {
-    usernameElem.textContent = userName;
-  }
-  if (emailElem) {
-    emailElem.textContent = userEmail;
-  }
-  if (profilePictureElem) {
-    profilePictureElem.src = userProfilePicture;
-  }
+  document.getElementById("userEmail").textContent = userEmail;
 }

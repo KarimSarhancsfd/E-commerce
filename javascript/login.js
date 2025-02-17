@@ -1,14 +1,20 @@
 "use strict";
 
-// Include Firebase libraries using script tags in your HTML file
-// <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
-// <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js"></script>
-
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 import {
   getAuth,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+
+//
+// we will need this dynamic links to forward
+// https://example.com/link-suffix
+// https://example.com/links/promos/link-suffix
+// https://links.example.com/link-suffix
+// https://ex.amp.le/link-suffix
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -36,25 +42,14 @@ login.addEventListener("click", function (event) {
 
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed
-      alert("Loging in...");
-      const user = userCredential.user;
+      // Signed in
+      alert(`loging in...`);
       window.location.href = "../userprofile.html";
       // ...
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
       alert(errorMessage);
+      // ..
     });
 });
-
-// function onSignIn(googleUser) {
-//   let profile = googleUser.getBasicProfile();
-//   console.log("ID: " + profile.getId());
-//   console.log("Name: " + profile.getName());
-//   console.log("Given Name: " + profile.getGivenName());
-//   console.log("Family Name: " + profile.getFamilyName());
-//   console.log("Image URL: " + profile.getImageUrl());
-//   console.log("Email: " + profile.getEmail());
-// }
