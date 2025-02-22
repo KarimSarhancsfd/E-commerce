@@ -30,6 +30,7 @@ googleLogin.addEventListener("click", function (event) {
       // The signed-in user info.
       const user = result.user;
       console.log(user);
+      update();
       window.location.href = "../userprofile.html";
       // ...
     })
