@@ -21,3 +21,5 @@ if (LogIn) {
     window.location.href = "login.html";
   });
 }
+
+const addtocart = document.getElementsByClassName('.normal');
