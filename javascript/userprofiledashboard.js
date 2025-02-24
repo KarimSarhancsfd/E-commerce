@@ -74,6 +74,10 @@ function updateUserProfile(user) {
   imgElement.style.height = "150px"; // Set a specific height
   imgElement.style.objectFit = "cover";
 
+    /* background: url("../img/w1-removebg.png") no-repeat top center/cover; */
+  /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%); */
+
   // Append the img element to the aside element with class "avatar"
   document.querySelector(".avatar").appendChild(imgElement);
 
