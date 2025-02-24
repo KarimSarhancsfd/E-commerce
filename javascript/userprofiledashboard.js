@@ -48,5 +48,34 @@ function updateUserProfile(user) {
 
   //update the profile section with user data
 
-  document.getElementById("userEmail").textContent = userEmail;
+  document.getElementById("userEmail").textContent = userName;
+  // JavaScript
+
+  //fetching picture
+  // JavaScript
+
+  // Get the profile picture URL from the fetched data
+  var userProfilePictureUrl = userProfilePicture;
+
+  // Create an img element
+  var imgElement = document.createElement("img");
+
+  // Set the src attribute to the user's profile picture URL
+  imgElement.src = userProfilePictureUrl;
+
+  // Optionally, set other attributes like alt
+  imgElement.alt = "User Profile Picture";
+
+  // Apply styles to the img element
+  imgElement.style.display = "block";
+  imgElement.style.margin = "100px 100px auto";
+  imgElement.style.borderRadius = "50%";
+  imgElement.style.width = "150px"; // Set a specific width
+  imgElement.style.height = "150px"; // Set a specific height
+  imgElement.style.objectFit = "cover";
+
+  // Append the img element to the aside element with class "avatar"
+  document.querySelector(".avatar").appendChild(imgElement);
+
+  // document.getElementById("").textContent = userProfilePicture;
 }
