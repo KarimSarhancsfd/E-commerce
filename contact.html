@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Her Beauty</title>
+    <!-- Preconnect and Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="icon"
       href="img/Her Beauty Logo - Original with Transparent Background  Without Name and Slogan- 54x59  - .png"
@@ -14,17 +20,29 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-
     <link rel="stylesheet" href="style/style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "QZ8fCAge1nnTROiTt",
+        });
+      })();
+    </script>
   </head>
   <body>
+    <!-- Header Section -->
     <section id="header">
-      <a href="#"
-        ><img
+      <a href="#">
+        <img
           src="img/Her Beauty Logo - Original with Transparent Background  Without Name and Slogan- 54x59  - .png"
           class="logo"
           alt=""
-      /></a>
+        />
+      </a>
       <div>
         <ul id="navbar">
           <li>
@@ -37,8 +55,8 @@
           <li><a class="active" href="contact.html">Contact</a></li>
           <li>
             <a href="cart.html" id="lg-bag">
-              <i class="fa-solid fa-bag-shopping"></i
-            ></a>
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
           </li>
           <li>
             <a href="userprofile.html">
@@ -52,10 +70,14 @@
         <i id="bar" class="fas fa-outdent"></i>
       </div>
     </section>
+
+    <!-- Page Header -->
     <section id="page-header" class="about-header">
       <h2>#let's_talk</h2>
       <p>LEAVE A MESSAGE, We love to hear from you!</p>
     </section>
+
+    <!-- Contact Details Section -->
     <section id="contact-details" class="section-p1">
       <div class="details">
         <span>GET IN TOUCH</span>
@@ -66,7 +88,6 @@
             <i class="fa-regular fa-map"></i>
             <p>56 GlassfordStreet Glasgow G1 1UL NewYork</p>
           </li>
-
           <li>
             <i class="fa-regular fa-envelope"></i>
             <p>
@@ -75,7 +96,6 @@
               optio officiis.
             </p>
           </li>
-
           <li>
             <i class="fa-solid fa-phone"></i>
             <p>
@@ -84,14 +104,12 @@
               optio officiis.
             </p>
           </li>
-
           <li>
             <i class="fa-regular fa-clock"></i>
             <p>10AM to 5pm</p>
           </li>
         </div>
       </div>
-
       <div class="map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.938216974702!2d31.349028299999997!3d30.067305399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e0b67b29aab%3A0xcadc62fe3a00998b!2sOxford%20City%20Center!5e0!3m2!1sen!2seg!4v1739080830576!5m2!1sen!2seg"
@@ -104,50 +122,54 @@
         ></iframe>
       </div>
     </section>
+
+    <!-- Form Section -->
     <section id="form-details">
-      <form action="">
+      <!-- Using onsubmit="return false" to prevent default submission -->
+      <form onsubmit="return false">
         <span>LEAVE A MESSAGE</span>
         <h2>We love to hear from you</h2>
-        <input type="text" placeholder="Your Name" />
-        <input type="text" placeholder="E-mail" />
-        <input type="text" placeholder="Subject" />
+        <input id="sendername" type="text" placeholder="Your Name" />
+        <input id="email" type="text" placeholder="E-mail" />
+        <input id="subject" type="text" placeholder="Subject" />
         <textarea
-          name=""
-          id=""
+          id="message"
           cols="30"
           rows="10"
           placeholder="Your Message"
+
         ></textarea>
-        <button class="normal">Submit</button>
+        <button id="submit" type="submit " onclick = "sendMail()" class="normal">Submit</button>
       </form>
       <div class="people">
         <div>
           <img src="img/people/1.png" alt="" />
           <p>
-            <span>John Doe</span> Senior Marketing Manger <br />
-            phone:+ 000 123 000 77 88 <br />
-            Email:contact@example.com
+            <span>John Doe</span> Senior Marketing Manager <br />
+            phone: +000 123 000 77 88 <br />
+            Email: contact@example.com
           </p>
         </div>
         <div>
           <img src="img/people/2.png" alt="" />
           <p>
-            <span>John Doe</span> Senior Marketing Manger <br />
-            phone:+ 000 123 000 77 88 <br />
-            Email:contact@example.com
+            <span>John Doe</span> Senior Marketing Manager <br />
+            phone: +000 123 000 77 88 <br />
+            Email: contact@example.com
           </p>
         </div>
         <div>
           <img src="img/people/3.png" alt="" />
           <p>
-            <span>John Doe</span> Senior Marketing Manger <br />
-            phone:+ 000 123 000 77 88 <br />
-            Email:contact@example.com
+            <span>John Doe</span> Senior Marketing Manager <br />
+            phone: +000 123 000 77 88 <br />
+            Email: contact@example.com
           </p>
         </div>
       </div>
     </section>
 
+    <!-- Newsletter Section -->
     <section id="newsletter">
       <div class="newstext">
         <h4>Sign Up for Newsletters</h4>
@@ -156,13 +178,13 @@
           <span>special offers.</span>
         </p>
       </div>
-
       <div class="form">
         <input type="text" placeholder="Your email adddress" />
         <button id="Log In" class="normal">Log In</button>
       </div>
     </section>
 
+    <!-- Footer -->
     <footer class="section-p1">
       <div class="col">
         <img
@@ -171,9 +193,9 @@
           alt=""
         />
         <h4>Contact</h4>
-        <p><strong>Address:</strong>Mokattam</p>
-        <p><strong>Phone:</strong>Mokattam</p>
-        <p><strong>Hours:</strong>Mokattam</p>
+        <p><strong>Address:</strong> Mokattam</p>
+        <p><strong>Phone:</strong> Mokattam</p>
+        <p><strong>Hours:</strong> Mokattam</p>
         <div class="follow">
           <h4>follow us</h4>
         </div>
@@ -193,7 +215,6 @@
         <a href="#">Term & Conditions</a>
         <a href="#">Contact Us</a>
       </div>
-
       <div class="col">
         <h4>Account</h4>
         <a href="#">Sign In</a>
@@ -202,7 +223,6 @@
         <a href="#">Track My Order</a>
         <a href="#">Help</a>
       </div>
-
       <div class="install">
         <h4>Install App</h4>
         <p>From App Store or Google play</p>
@@ -218,6 +238,9 @@
       </div>
     </footer>
 
+    <!-- General JS -->
     <script src="javascript/general.js"></script>
+
+    <script src="/javascript/submit.js"></script>
   </body>
 </html>
