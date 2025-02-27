@@ -14,6 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
@@ -30,12 +31,12 @@
             <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
           </li>
           <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
+          <li><a class="active" href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li>
-            <a class="active" href="cart.html" id="lg-bag">
+            <a href="cart.html" id="lg-bag">
               <i class="fa-solid fa-bag-shopping"></i
             ></a>
           </li>
@@ -51,51 +52,55 @@
         <i id="bar" class="fas fa-outdent"></i>
       </div>
     </section>
-    <section id="page-header" class="about-header">
-      <h2>#let's_talk</h2>
-      <p>LEAVE A MESSAGE, We love to hear from you!</p>
-    </section>
-    <section id="cart" class="section-p1">
-      <table width="100%">
-        <thead>
-          <tr>
-            <td>Remove</td>
-            <td>Image</td>
-            <td>Product</td>
-            <td>Price</td>
-            <td>Quantity</td>
-            <td>Subtotal</td>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Dynamic content will be inserted here -->
-        </tbody>
-      </table>
+    <section id="page-header">
+      <h2>#stayhome</h2>
+
+      <p>Save more with coupons & up to 70% off!</p>
     </section>
 
-    <section id="cart-add" class="section-p1">
-      <div id="coupon">
-        <h3>Apply Coupon</h3>
-        <div><input type="text" placeholder="Enter Your Coupon" /></div>
-        <button class="normal">Apply</button>
+    <section id="product1" class="section-p1">
+      <div class="pro-container">
+        
+        <div class="pro" onclick="window.location.href='sproduct.html'">
+          <!-- onclick="window.location.href='sproduct.html'" on click it will direct to to the other badge product -->
+          <img src="img/products/f1.jpg" alt="" srcset="" />
+          <div class="des">
+            <span></span>
+            <h5>Cartoon Astronaut T-Shirtsc</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4></h4>
+          </div>
+          <a href="#"><i class="fa fa-cart-shopping cart"></i></a>
+        </div>
+        
+ 
+     
+    </section>
+
+    <section id="pagination" class="section-p1">
+      <a href="/shop.html">1</a>
+      <a class = 'active' href="/page2.html">2</a>
+      <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+  </section>
+
+    <section id="newsletter">
+      <div class="newstext">
+        <h4>Sign Up for Newsletters</h4>
+        <p>
+          Get E-mail updates about our latest shop and
+          <span>special offers.</span>
+        </p>
       </div>
-      <div id="subtotal">
-        <h3>Cart Totals</h3>
-        <table>
-          <tr>
-            <td>Cart Subtotal</td>
-            <td>$0.00</td>
-          </tr>
-          <tr>
-            <td>Shipping</td>
-            <td>Free</td>
-          </tr>
-          <tr>
-            <td><strong>Total</strong></td>
-            <td><strong>$0.00</strong></td>
-          </tr>
-        </table>
-        <button class="normal">Proceed to checkout</button>
+
+      <div class="form">
+        <input type="text" placeholder="Your email adddress" />
+        <button id="Log In" class="normal">Log In</button>
       </div>
     </section>
 
@@ -155,8 +160,8 @@
     </footer>
 
     <script src="javascript/general.js"></script>
-    <script src="/javascript/add_to_cart_button.js"></script>
-    <script src="/javascript/cart.js"></script>
+    <script type="module" src="javascript/shopping-cart.js" defer></script>
+    <script type="module" src="/javascript/pagenitation.js" defer></script>
     <script type="module" src="/javascript/pagenation.js"></script>
   </body>
 </html>
