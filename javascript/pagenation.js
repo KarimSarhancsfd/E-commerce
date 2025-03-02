@@ -1,36 +1,46 @@
+// URL for fetching products
 const API_URL = "https://fakestoreapi.com/products?limit=150";
 
+// Event listener for DOM content loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // Check if the shop page is loaded
   if (document.getElementById("product1")) {
     loadShopPage();
   }
+  // Check if the product details page is loaded
   if (document.getElementById("prodetails")) {
     loadProductDetails();
   }
+  // Check if the cart page is loaded
   if (document.querySelector("#cart table tbody")) {
     loadCart();
   }
 });
 
+// Function to load the shop page
 function loadShopPage() {
   fetch(API_URL)
     .then((res) => res.json())
     .then((products) => {
+      // Get current page from URL parameters
       let urlParams = new URLSearchParams(window.location.search);
       let currentPage = parseInt(urlParams.get("page")) || 1;
       const productsPerPage = 8;
       const totalPages = Math.ceil(products.length / productsPerPage);
 
+      // Calculate the products to show on the current page
       const start = (currentPage - 1) * productsPerPage;
       const end = start + productsPerPage;
       const productsToShow = products.slice(start, end);
 
+      // Render products and pagination
       renderProducts(productsToShow);
       renderPagination(totalPages, currentPage);
     })
     .catch((err) => console.error("Error loading products:", err));
 }
 
+// Function to render products on the shop page
 function renderProducts(products) {
   const container = document.querySelector("#product1 .pro-container");
   if (!container) return;
@@ -86,6 +96,7 @@ function renderProducts(products) {
   });
 }
 
+// Function to render pagination on the shop page
 function renderPagination(totalPages, currentPage) {
   const paginationContainer = document.getElementById("pagination");
   if (!paginationContainer) return;
@@ -110,6 +121,7 @@ function renderPagination(totalPages, currentPage) {
   }
 }
 
+// Function to load product details
 function loadProductDetails() {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = urlParams.get("id");
@@ -156,6 +168,7 @@ function loadProductDetails() {
     .catch((err) => console.error("Error loading product details:", err));
 }
 
+// Function to set up small image swap on product details page
 function setupSmallImageSwap() {
   const mainImg = document.getElementById("MainImg");
   const smallImgs = document.getElementsByClassName("small-img");
@@ -168,6 +181,7 @@ function setupSmallImageSwap() {
   }
 }
 
+// Function to add a product to the cart
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const existing = cart.find((item) => item.id === product.id);
@@ -181,6 +195,7 @@ function addToCart(product) {
   alert("Product added to cart!");
 }
 
+// Function to load the cart page
 function loadCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const tbody = document.querySelector("#cart table tbody");
@@ -246,6 +261,7 @@ function loadCart() {
   }
 }
 
+// Function to remove a product from the cart
 function removeFromCart(id) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart = cart.filter((item) => item.id !== id);
@@ -253,6 +269,7 @@ function removeFromCart(id) {
   loadCart();
 }
 
+// Function to update the quantity of a product in the cart
 function updateCartQuantity(id, newQuantity) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const item = cart.find((item) => item.id === id);
